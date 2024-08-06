@@ -25,7 +25,7 @@ const Shapes = () => {
             blur={1}
             far={9}
           />
-          <Environment preset="studio" />
+          <Environment preset="park" />
         </Suspense>
       </Canvas>
     </div>
@@ -63,7 +63,7 @@ const Geometries = () => {
   const materials = [
     new THREE.MeshNormalMaterial(),
     new THREE.MeshStandardMaterial({ color: 0x2ecc71, roughness: 0 }),
-    new THREE.MeshStandardMaterial({ color: 0xf1c40f, roughness: 0.4 }),
+    new THREE.MeshStandardMaterial({ color: 0xf1c40f, roughness: 0.2 }),
     new THREE.MeshStandardMaterial({ color: 0xe74c3c, roughness: 0.1 }),
     new THREE.MeshStandardMaterial({ color: 0x8e44ad, roughness: 0.1 }),
     new THREE.MeshStandardMaterial({ color: 0x1abc9c, roughness: 0 }),
@@ -79,10 +79,17 @@ const Geometries = () => {
     }),
   ];
 
+  const soundEffects = [
+    new Audio("/sounds/knock1.ogg"),
+    new Audio("/sounds/knock2.ogg"),
+    new Audio("/sounds/knock3.ogg"),
+  ];
+
   return geometries.map(({ position, r, geometry }) => (
     <Geometry
       key={JSON.stringify(position)}
       position={position.map((p) => p * 2)}
+      soundEffects={soundEffects}
       geometry={geometry}
       materials={materials}
       r={r}
@@ -90,7 +97,7 @@ const Geometries = () => {
   ));
 };
 
-const Geometry = ({ r, position, geometry, materials }) => {
+const Geometry = ({ r, position, geometry, materials, soundEffects }) => {
   const meshRef = useRef();
   const [visible, setVisible] = useState(false);
 
@@ -102,6 +109,8 @@ const Geometry = ({ r, position, geometry, materials }) => {
 
   const handleClick = (e) => {
     const mesh = e.object;
+
+    gsap.utils.random(soundEffects).play();
 
     gsap.to(mesh.rotation, {
       x: `+=${gsap.utils.random(0, 2)}`,

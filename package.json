@@ -22,10 +22,12 @@
     "prismic-cli": "^4.2.3",
     "react": "^18",
     "react-dom": "^18",
+    "react-icons": "^5.2.1",
     "three": "^0.167.1"
   },
   "devDependencies": {
     "@slicemachine/adapter-next": "^0.3.43",
+    "@tailwindcss/typography": "^0.5.13",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

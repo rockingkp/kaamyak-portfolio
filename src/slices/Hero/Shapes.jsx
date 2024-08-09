@@ -19,7 +19,7 @@ const Shapes = () => {
         <Suspense fallback={null}>
           <Geometries />
           <ContactShadows
-            position={[0, -5, 0]}
+            position={[0, -3.5, 0]}
             opacity={0.65}
             scale={40}
             blur={1}
@@ -36,30 +36,70 @@ const Geometries = () => {
   const geometries = [
     {
       position: [0, 0, 0],
-      r: 0.5,
-      geometry: new THREE.DodecahedronGeometry(4.5), //dodecahedron
+      r: Math.random() * 0.4 + 0.3,
+      geometry: new THREE.IcosahedronGeometry(3), // Gem
+    },
+    {
+      position: [1, -0.75, 4],
+      r: Math.random() * 0.4 + 0.3,
+      geometry: new THREE.TorusKnotGeometry(0.5, 0.3, 200, 70), // Pill
+    },
+    {
+      position: [-1.4, 2, -4],
+      r: Math.random() * 0.4 + 0.3,
+      geometry: new THREE.TetrahedronGeometry(2), // Soccer ball
+    },
+    {
+      position: [-0.8, -0.75, 5],
+      r: Math.random() * 0.4 + 0.3,
+      geometry: new THREE.TorusGeometry(0.6, 0.25, 16, 32), // Donut
+    },
+    {
+      position: [1.6, 1.6, -4],
+      r: Math.random() * 0.4 + 0.3,
+      geometry: new THREE.CapsuleGeometry(0.8, 2, 32), // Diamond
     },
   ];
   const materials = [
     new THREE.MeshStandardMaterial({
-      roughness: 0,
-      metalness: 0.3,
-      color: 0x0f172a,
+      color: 0x2e3440,
+      roughness: Math.random() * 0.5 + 0.3,
+      metalness: Math.random() * 0.5 + 0.2,
     }),
     new THREE.MeshStandardMaterial({
-      roughness: 0.4,
-      metalness: 0.3,
-      color: 0x2c3e50,
+      color: 0x4c566a,
+      roughness: Math.random() * 0.5 + 0.3,
+      metalness: Math.random() * 0.5 + 0.2,
     }),
     new THREE.MeshStandardMaterial({
-      roughness: 0.1,
-      metalness: 0.4,
-      color: 0x31363f,
+      color: 0x434c5e,
+      roughness: Math.random() * 0.5 + 0.3,
+      metalness: Math.random() * 0.5 + 0.2,
     }),
     new THREE.MeshStandardMaterial({
-      roughness: 0.1,
-      metalness: 0,
-      color: 0x2e3229,
+      color: 0xd8dee9,
+      roughness: Math.random() * 0.5 + 0.3,
+      metalness: Math.random() * 0.5 + 0.2,
+    }),
+    new THREE.MeshStandardMaterial({
+      color: 0x81a1c1,
+      roughness: Math.random() * 0.5 + 0.3,
+      metalness: Math.random() * 0.5 + 0.2,
+    }),
+    new THREE.MeshStandardMaterial({
+      roughness: Math.random() * 0.5 + 0.3,
+      metalness: Math.random() * 0.5 + 0.2,
+      color: 0xbf616a,
+    }),
+    new THREE.MeshStandardMaterial({
+      color: 0x4c8c5a,
+      roughness: Math.random() * 0.5 + 0.3,
+      metalness: Math.random() * 0.5 + 0.2,
+    }),
+    new THREE.MeshStandardMaterial({
+      color: 0x3eb8b8,
+      roughness: Math.random() * 0.5 + 0.3,
+      metalness: Math.random() * 0.5 + 0.2,
     }),
   ];
 

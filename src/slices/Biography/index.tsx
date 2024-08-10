@@ -36,13 +36,18 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
             </Link>{" "}
           </span>
           , I specialize in Next.js, bringing a robust blend of frontend and
-          backend expertise to the table. My main focus is on continuous
-          learning, exploring new technologies and languages by building
-          real-world projects. My journey has led me to specialize in front-end
-          development, where I create interactive experiences that are both
-          functional and visually stunning. Join me as I push the boundaries of
-          what&apos;s possible in the digital world, adopting best coding
-          practices and writing clean, efficient code!
+          backend expertise to the table.
+          <br />
+          <br />
+          My main focus is on continuous learning, exploring new technologies
+          and languages by building real-world projects. My journey has led me
+          to specialize in front-end development, where I create interactive
+          experiences that are both functional and visually stunning.
+          <br />
+          <br />
+          Join me as I push the boundaries of what&apos;s possible in the
+          digital world, adopting best coding practices and writing clean,
+          efficient code!
         </div>
         <Button
           linkField={slice.primary.button_link}

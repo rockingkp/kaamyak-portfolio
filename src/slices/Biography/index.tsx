@@ -2,9 +2,9 @@ import Bounded from "@/components/Bounded";
 import Button from "@/components/Button";
 import Heading from "@/components/Heading";
 import { Content } from "@prismicio/client";
-import { PrismicNextImage } from "@prismicio/next";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { SliceComponentProps } from "@prismicio/react";
 import Avatar from "./Avatar";
+import Link from "next/link";
 
 /**
  * Props for `Biography`.
@@ -24,8 +24,25 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
         <Heading as="h1" size="xl" className="col-start-1">
           {slice.primary.heading}
         </Heading>
-        <div className="prose prhose-xl prose-slate prose-invert col-start-1">
-          <PrismicRichText field={slice.primary.description} />
+        <div className="prose prose-xl prose-slate prose-invert col-start-1">
+          Hey, I&apos;m Kaamyak! As a highly skilled fullstack developer with{" "}
+          <span className=" text-xl font-bold ">
+            <Link
+              className="no-underline hover:underline hover:text-yellow-300 transition-transform duration-300 text-blue-400 cursor-pointer"
+              href="https://www.credly.com/badges/7897e5db-8dce-4b35-b95e-d0ecaa91f044/public_url"
+              target="_blank"
+            >
+              AWS Solutions Architect Associate certification
+            </Link>{" "}
+          </span>
+          , I specialize in Next.js, bringing a robust blend of frontend and
+          backend expertise to the table. My main focus is on continuous
+          learning, exploring new technologies and languages by building
+          real-world projects. My journey has led me to specialize in front-end
+          development, where I create interactive experiences that are both
+          functional and visually stunning. Join me as I push the boundaries of
+          what&apos;s possible in the digital world, adopting best coding
+          practices and writing clean, efficient code!
         </div>
         <Button
           linkField={slice.primary.button_link}

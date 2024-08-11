@@ -75,6 +75,14 @@
           "placeholder": "",
           "select": null
         }
+      },
+      "medium_link": {
+        "type": "Link",
+        "config": {
+          "label": "Medium Link",
+          "placeholder": "",
+          "select": null
+        }
       }
     },
     "SEO and Metadata": {

@@ -69,7 +69,7 @@ const Avatar = ({ image, className }: AvatarProps) => {
       ref={component}
       className={clsx("relative h-full select-none w-full", className)}
     >
-      <div className="avatar aspect-square overflow-hidden rounded-3xl border-2 border-slate-700 opacity-0f">
+      <div className="avatar aspect-square overflow-hidden rounded-3xl border-2 border-slate-700 opacity-0">
         <PrismicNextImage
           field={image}
           className="avatar-image h-full w-full object-fill"

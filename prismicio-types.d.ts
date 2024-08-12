@@ -157,6 +157,7 @@ export type HomepageDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | ExperienceSlice
   | ContentIndexSlice
   | TechListSlice
   | BiographySlice;
@@ -238,6 +239,17 @@ interface ProjectDocumentData {
   title: prismic.KeyTextField;
 
   /**
+   * Hover Image field in *Project*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.hover_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  hover_image: prismic.ImageField<never>;
+
+  /**
    * Description field in *Project*
    *
    * - **Field Type**: Text
@@ -249,15 +261,15 @@ interface ProjectDocumentData {
   description: prismic.KeyTextField;
 
   /**
-   * Hover Image field in *Project*
+   * TestField field in *Project*
    *
-   * - **Field Type**: Image
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: project.hover_image
+   * - **API ID Path**: project.testfield
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#image
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  hover_image: prismic.ImageField<never>;
+  testfield: prismic.KeyTextField;
 
   /**
    * Slice Zone field in *Project*
@@ -671,6 +683,108 @@ export type ContentIndexSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *Experience → Default → Primary → Experience Title*
+ */
+export interface ExperienceSliceDefaultPrimaryExperienceTitleItem {
+  /**
+   * Title field in *Experience → Default → Primary → Experience Title*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: experience.default.primary.experience_title[].title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Time Period field in *Experience → Default → Primary → Experience Title*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: experience.default.primary.experience_title[].time_period
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  time_period: prismic.KeyTextField;
+
+  /**
+   * Institution field in *Experience → Default → Primary → Experience Title*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: experience.default.primary.experience_title[].institution
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  institution: prismic.KeyTextField;
+
+  /**
+   * Description field in *Experience → Default → Primary → Experience Title*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: experience.default.primary.experience_title[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *Experience → Default → Primary*
+ */
+export interface ExperienceSliceDefaultPrimary {
+  /**
+   * Heading field in *Experience → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: experience.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Experience Title field in *Experience → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: experience.default.primary.experience_title[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  experience_title: prismic.GroupField<
+    Simplify<ExperienceSliceDefaultPrimaryExperienceTitleItem>
+  >;
+}
+
+/**
+ * Default variation for Experience Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ExperienceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ExperienceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Experience*
+ */
+type ExperienceSliceVariation = ExperienceSliceDefault;
+
+/**
+ * Experience Shared Slice
+ *
+ * - **API ID**: `experience`
+ * - **Description**: Experience
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ExperienceSlice = prismic.SharedSlice<
+  "experience",
+  ExperienceSliceVariation
+>;
+
+/**
  * Primary content in *Hero → Default → Primary*
  */
 export interface HeroSliceDefaultPrimary {
@@ -878,6 +992,11 @@ declare module "@prismicio/client" {
       ContentIndexSliceDefaultPrimary,
       ContentIndexSliceVariation,
       ContentIndexSliceDefault,
+      ExperienceSlice,
+      ExperienceSliceDefaultPrimaryExperienceTitleItem,
+      ExperienceSliceDefaultPrimary,
+      ExperienceSliceVariation,
+      ExperienceSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,

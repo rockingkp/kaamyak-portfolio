@@ -1,6 +1,6 @@
 "use client";
 
-import { blogLinks } from "@/utils/links";
+import { blogLinks, projectLinks } from "@/utils/links";
 import { asImageSrc, Content, isFilled } from "@prismicio/client";
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -128,6 +128,9 @@ const ContentList = ({
     setCurrentItem(null);
   };
 
+  const finalViewLinkText =
+    pathname === "/projects" ? "View Live Project" : viewLinkText;
+
   return (
     <div ref={component}>
       <ul
@@ -140,7 +143,7 @@ const ContentList = ({
               {isFilled.keyText(item.data.title) && (
                 <li
                   key={index}
-                  className="list-item opacity-0f"
+                  className="list-item opacity-0"
                   onMouseEnter={() => onMouseEnter(index)}
                   ref={(el) => setItemRef(el, index)}
                 >
@@ -151,17 +154,52 @@ const ContentList = ({
                     aria-label={item.data.title}
                   >
                     <div className="flex flex-col">
-                      <span className="text-3xl font-bold">
+                      <span className="text-3xl  font-bold">
                         {item.data.title}
                       </span>
-                      <div className="flex gap-3 text-yellow-400 text-lg font-bold">
+                      <div className="flex gap-2 text-yellow-400 mt-4 text-[1.3rem] font-bold lowercase ">
                         {item.tags.map((tag, index) => (
-                          <span key={index}>{tag}</span>
+                          <span key={index} className="mt-4">
+                            {`#${tag}`}
+                          </span>
                         ))}
                       </div>
                     </div>
-                    <span className="ml-auto flex items-center gap-2 text-xl font-medium md:ml-0">
+                    <span className="ml-auto flex items-center gap-2 text-lg font-medium md:ml-0">
                       {viewLinkText} <MdArrowOutward />
+                    </span>
+                  </Link>
+                </li>
+              )}
+            </>
+          ))}
+        {pathname === "/projects" &&
+          items.map((item, index) => (
+            <>
+              {isFilled.keyText(item.data.title) && (
+                <li
+                  key={index}
+                  className="list-item opacity-0"
+                  onMouseEnter={() => onMouseEnter(index)}
+                  ref={(el) => setItemRef(el, index)}
+                >
+                  <Link
+                    target="_blank"
+                    href={projectLinks[index]?.url || "#"} // You can replace this with a dynamic URL based on `item`
+                    className="flex flex-col justify-between border-t border-t-slate-100 py-10 text-slate-200 md:flex-row"
+                    aria-label={item.data.title}
+                  >
+                    <div className="flex flex-col">
+                      <span className="text-3xl font-bold">
+                        {item.data.title}
+                      </span>
+
+                      <div className="flex gap-2 text-yellow-400 mt-4 text-[1.3rem] font-bold">
+                        {projectLinks[index]?.description}
+                      </div>
+                    </div>
+                    <span className="ml-auto flex items-center gap-2 text-xl font-medium md:ml-0">
+                      {finalViewLinkText} <MdArrowOutward />
                     </span>
                   </Link>
                 </li>

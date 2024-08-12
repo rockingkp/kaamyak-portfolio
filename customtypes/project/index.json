@@ -19,6 +19,14 @@
         },
         "type": "UID"
       },
+      "hover_image": {
+        "type": "Image",
+        "config": {
+          "label": "Hover Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
       "description": {
         "type": "Text",
         "config": {
@@ -26,12 +34,11 @@
           "placeholder": ""
         }
       },
-      "hover_image": {
-        "type": "Image",
+      "testfield": {
+        "type": "Text",
         "config": {
-          "label": "Hover Image",
-          "constraint": {},
-          "thumbnails": []
+          "label": "TestField",
+          "placeholder": ""
         }
       },
       "slices": {

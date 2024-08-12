@@ -26,7 +26,7 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
     let ctx = gsap.context(() => {
       const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: component.current,
+          pin: true,
           start: "top bottom",
           end: "bottom top",
           scrub: 4,
@@ -61,6 +61,7 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       ref={component}
+      className="overflow-x-hidden"
     >
       <Bounded as="div">
         <Heading size="xl" className="mb-8" as="h2">

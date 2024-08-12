@@ -52,14 +52,6 @@
           "placeholder": ""
         }
       },
-      "twitter_link": {
-        "type": "Link",
-        "config": {
-          "label": "Twitter Link",
-          "placeholder": "",
-          "select": null
-        }
-      },
       "github_link": {
         "type": "Link",
         "config": {
@@ -72,6 +64,14 @@
         "type": "Link",
         "config": {
           "label": "LinkedIn Link",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "twitter_link": {
+        "type": "Link",
+        "config": {
+          "label": "Twitter Link",
           "placeholder": "",
           "select": null
         }

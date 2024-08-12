@@ -392,17 +392,6 @@ interface SettingsDocumentData {
   contact_label: prismic.KeyTextField;
 
   /**
-   * Twitter Link field in *Settings*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: settings.twitter_link
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  twitter_link: prismic.LinkField;
-
-  /**
    * Github Link field in *Settings*
    *
    * - **Field Type**: Link
@@ -423,6 +412,17 @@ interface SettingsDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   linkedin_link: prismic.LinkField;
+
+  /**
+   * Twitter Link field in *Settings*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.twitter_link
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  twitter_link: prismic.LinkField;
 
   /**
    * Medium Link field in *Settings*

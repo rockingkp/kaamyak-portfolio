@@ -57,8 +57,10 @@ const ContentList = ({
           }
         );
       });
-    });
-  });
+
+      return () => ctx.revert(); //cleanup
+    }, component);
+  }, []);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -106,6 +108,14 @@ const ContentList = ({
       exp: -10,
     });
   });
+
+  useEffect(() => {
+    contentImages.forEach((url) => {
+      if (!url) return;
+      const img = new Image();
+      img.src = url;
+    });
+  }, [contentImages]);
 
   const onMouseEnter = (index: number) => {
     setCurrentItem(index);

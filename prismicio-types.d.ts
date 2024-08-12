@@ -238,15 +238,15 @@ interface ProjectDocumentData {
   title: prismic.KeyTextField;
 
   /**
-   * Date field in *Project*
+   * Description field in *Project*
    *
-   * - **Field Type**: Date
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: project.date
+   * - **API ID Path**: project.description
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#date
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  date: prismic.DateField;
+  description: prismic.KeyTextField;
 
   /**
    * Hover Image field in *Project*

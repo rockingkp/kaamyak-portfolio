@@ -19,10 +19,10 @@
         },
         "type": "UID"
       },
-      "date": {
-        "type": "Date",
+      "description": {
+        "type": "Text",
         "config": {
-          "label": "Date",
+          "label": "Description",
           "placeholder": ""
         }
       },

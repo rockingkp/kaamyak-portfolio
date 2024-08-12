@@ -48,7 +48,7 @@ const Geometries = () => {
     {
       position: [-0.8, -0.75, 5],
       r: 0.5,
-      geometry: new THREE.CapsuleGeometry(0.3, 1, 10, 20),
+      geometry: new THREE.OctahedronGeometry(0.8),
     },
     {
       position: [-1.4, 2, -4],

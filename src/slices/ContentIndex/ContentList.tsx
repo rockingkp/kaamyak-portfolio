@@ -165,7 +165,7 @@ const ContentList = ({
                         ))}
                       </div>
                     </div>
-                    <span className="ml-auto flex items-center gap-2 text-lg font-medium md:ml-0">
+                    <span className="ml-auto mt-3 flex items-center gap-2 text-lg font-medium md:ml-0">
                       {viewLinkText} <MdArrowOutward />
                     </span>
                   </Link>
@@ -198,7 +198,7 @@ const ContentList = ({
                         {projectLinks[index]?.description}
                       </div>
                     </div>
-                    <span className="ml-auto flex items-center gap-2 text-xl font-medium md:ml-0">
+                    <span className="ml-auto mt-3 flex items-center gap-2 text-xl font-medium md:ml-0">
                       {finalViewLinkText} <MdArrowOutward />
                     </span>
                   </Link>

@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export function constructMetadata({
-  title = "Kaamyak Pant",
+  title = "Kaamyak Pant | Portfolio Website",
   description = "Portfolio website of Kaamyak Pant",
   image = "/thumbnail.png",
   icons = "/favicon.ico",

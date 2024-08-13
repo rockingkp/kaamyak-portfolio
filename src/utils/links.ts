@@ -37,7 +37,7 @@ export const projectLinks = [
   },
   {
     id: 3,
-    description: "Order a customized mobile phone cover as per your choice",
+    description: "Create custom high-quality phone cases in seconds",
     url: "https://viper-wrap.vercel.app/", // Viper Wrap
   },
   {

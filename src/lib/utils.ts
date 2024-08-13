@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
-export const constructMetadata = ({
-  title = "Kaamyak Pant | Portfolio Website",
+export function constructMetadata({
+  title = "Kaamyak Pant",
   description = "Portfolio website of Kaamyak Pant",
   image = "/thumbnail.png",
   icons = "/favicon.ico",
@@ -10,22 +10,23 @@ export const constructMetadata = ({
   description?: string;
   image?: string;
   icons?: string;
-} = {}): Metadata => {
+} = {}): Metadata {
   return {
     title,
     description,
     openGraph: {
-      title,
-      description,
+      title: "Kaamyak Pant | Portfolio Website",
+      description: "Portfolio Website of Kaamyak Pant",
       images: [{ url: image }],
     },
     twitter: {
       card: "summary_large_image",
-      title,
+      title: "Kaamyak Pant | Portfolio Website",
       description,
       images: [image],
       creator: "@KaamyakPant",
     },
     icons,
+    metadataBase: new URL("https://kaamyak.dev/"),
   };
-};
+}

@@ -8,18 +8,10 @@ import { createClient } from "@/prismicio";
 
 const urbanist = Urbanist({ subsets: ["latin"] });
 
-export async function generateMetadata(): Promise<Metadata> {
-  const client = createClient();
-  const settings = await client.getSingle("settings");
-
-  return {
-    title: settings.data.meta_title,
-    description: settings.data.meta_description,
-    // openGraph: {
-    //   images: [settings.data.og_image?.url || ""],
-    // },
-  };
-}
+export const metadata: Metadata = {
+  title: "Kaamyak Pant",
+  description: "Portfolio website of Kaamyak",
+};
 
 export default function RootLayout({
   children,

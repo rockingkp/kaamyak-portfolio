@@ -4,14 +4,11 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { clsx } from "clsx";
-import { createClient } from "@/prismicio";
+import { constructMetadata } from "@/lib/utils";
 
 const urbanist = Urbanist({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "Kaamyak Pant",
-  description: "Portfolio website of Kaamyak",
-};
+export const metadata = constructMetadata();
 
 export default function RootLayout({
   children,

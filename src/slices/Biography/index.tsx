@@ -7,9 +7,8 @@ import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import Avatar from "./Avatar";
 import Link from "next/link";
-// import ShowConfetti from "./ShowConfetti";
 import Confetti from "react-dom-confetti";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 /**
  * Props for `Biography`.
@@ -22,20 +21,19 @@ export type BiographyProps = SliceComponentProps<Content.BiographySlice>;
 const Biography = ({ slice }: BiographyProps): JSX.Element => {
   const [showConfetti, setShowConfetti] = useState<boolean>(false);
 
-  useEffect(() => {});
   return (
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
       <div className="grid gap-x-8 gap-y-6 md:grid-cols-[2fr,1fr]">
-        <Heading as="h1" size="xl" className="col-start-1">
+        <Heading as="h1" size="xl" className="col-start-1 select-none">
           {slice.primary.heading}
         </Heading>
         <div className="prose prose-xl prose-slate prose-invert col-start-1">
-          Hey, I&apos;m Kaamyak! As a highly skilled fullstack developer with{" "}
+          I am an{" "}
           <span
-            className=" text-xl font-bold "
+            className=" text-xl font-bold inline-block "
             onMouseEnter={() => setShowConfetti(true)}
             onMouseLeave={() => setShowConfetti(false)}
             onTouchStart={() => setShowConfetti(true)}
@@ -50,22 +48,26 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
               href="https://www.credly.com/badges/7897e5db-8dce-4b35-b95e-d0ecaa91f044/public_url"
               target="_blank"
             >
-              AWS Solutions Architect Associate certification
+              AWS certified Solutions Architect Associate
             </Link>{" "}
-          </span>
-          , I specialize in Next.js, bringing a robust blend of frontend and
-          backend expertise to the table.
+          </span>{" "}
+          and a full stack developer with proven track record in creating and
+          optimizing end-to-end solutions.
           <br />
           <br />
-          My main focus is on continuous learning, exploring new technologies
-          and languages by building real-world projects. My journey has led me
-          to specialize in front-end development, where I create interactive
-          experiences that are both functional and visually stunning.
-          <br />
+          My expertise spans across front-end and back-end technologies ,
+          <span className="text-xl font-medium inline-block text-blue-400 ">
+            learning by making projects
+          </span>{" "}
+          and build robust, scalable applications. With experience in diverse
+          projects, I am dedicated to leveraging the latest technologies to
+          deliver impactful and efficient software solutions. <br />
           <br />
           Join me as I push the boundaries of what&apos;s possible in the
-          digital world, adopting best coding practices and writing clean,
-          efficient code!
+          digital world, adopting best coding practices and{" "}
+          <span className="text-xl font-medium inline-block text-blue-400 ">
+            writing clean and efficient code !
+          </span>
         </div>
         <Button
           linkField={slice.primary.button_link}

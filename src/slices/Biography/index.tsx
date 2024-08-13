@@ -38,6 +38,8 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
             className=" text-xl font-bold "
             onMouseEnter={() => setShowConfetti(true)}
             onMouseLeave={() => setShowConfetti(false)}
+            onTouchStart={() => setShowConfetti(true)}
+            onTouchEnd={() => setShowConfetti(false)}
           >
             <Confetti
               active={showConfetti}

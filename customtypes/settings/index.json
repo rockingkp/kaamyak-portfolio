@@ -76,6 +76,14 @@
           "select": null
         }
       },
+      "leetcode_link": {
+        "type": "Link",
+        "config": {
+          "label": "leetcode_link",
+          "placeholder": "",
+          "select": null
+        }
+      },
       "medium_link": {
         "type": "Link",
         "config": {

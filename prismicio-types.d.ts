@@ -437,6 +437,17 @@ interface SettingsDocumentData {
   twitter_link: prismic.LinkField;
 
   /**
+   * leetcode_link field in *Settings*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.leetcode_link
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  leetcode_link: prismic.LinkField;
+
+  /**
    * Medium Link field in *Settings*
    *
    * - **Field Type**: Link

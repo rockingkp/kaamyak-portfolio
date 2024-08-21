@@ -6,6 +6,7 @@ import Link from "next/link";
 import Bounded from "@/components/Bounded";
 import { isFilled } from "@prismicio/client";
 import { FaGithub, FaTwitter, FaLinkedin, FaMedium } from "react-icons/fa6";
+import { SiLeetcode } from "react-icons/si";
 
 export default async function Footer() {
   const client = createClient();
@@ -84,6 +85,17 @@ export default async function Footer() {
               <FaTwitter />
             </PrismicNextLink>
           )}
+
+          {isFilled.link(settings.data.leetcode_link) && (
+            <PrismicNextLink
+              field={settings.data.leetcode_link}
+              className="p-2 text-2xl text-slate-300 transition-all duration-150 hover:scale-125 hover:text-yellow-400"
+              aria-label={settings.data.name + " on Leetcode"}
+            >
+              <SiLeetcode />
+            </PrismicNextLink>
+          )}
+
           {isFilled.link(settings.data.medium_link) && (
             <PrismicNextLink
               field={settings.data.medium_link}
